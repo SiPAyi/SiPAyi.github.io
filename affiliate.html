@@ -51,18 +51,39 @@
 
 <body>
     <h1 style="text-align: center; color: green;">Welcome to the Affiliate Links Page</h1>
-
     <h2>Recommended Products:</h2>
-    <div class="product-container">
-        <div id="product1" class="product-card">
-            <h3>Product 1</h3>
-            <p>Check out this amazing product!</p>
-            <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
-                style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
-                src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=kottapetasai-21&language=en_IN&marketplace=amazon&region=IN&placement=B09Z6FRGVY&asins=B09Z6FRGVY&linkId=3ed6f6c8fab5dd95e17b79d44d9e89db&show_border=true&link_opens_in_new_window=true"></iframe>
-        </div>
-
+    <div class="product-container" id="productContainer">
+        <!-- Product cards will be dynamically added here -->
     </div>
+
+        <script>
+        const productContainer = document.getElementById("productContainer");
+
+        // Fetch JSON data from the URL
+        fetch("https://sadatrader.000webhostapp.com/affiliate/products.json")
+            .then(response => response.json())
+            .then(productsData => {
+                // Iterate over each product and generate the product cards dynamically
+                productsData.forEach(product => {
+                    const productName = product.name;
+                    const productLink = product.frame_snippet;
+
+                    const productCardHTML = `
+        <div class="product-card">
+            <h3>${productName}</h3>
+            ${productLink}
+        </div>
+      `;
+
+                    productContainer.innerHTML += productCardHTML;
+                });
+            })
+            .catch(error => {
+                console.log("Error loading product data:", error);
+            });
+
+
+    </script>
 </body>
 
 </html>
