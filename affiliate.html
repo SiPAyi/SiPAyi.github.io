@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Affiliate Links</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body{
+            max-width: 900px;
+            margin: 0px auto;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-card {
+            width: 220px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+
+        iframe {
+            display: flex;
+            margin: 10px auto;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card h3,
+        .product-card p {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: green;">Welcome to the Affiliate Links Page</h1>
+
+    <h2>Recommended Products:</h2>
+    <div class="product-container">
+        <div id="product1" class="product-card">
+            <h3>Product 1</h3>
+            <p>Check out this amazing product!</p>
+            <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
+                style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+                src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=kottapetasai-21&language=en_IN&marketplace=amazon&region=IN&placement=B09Z6FRGVY&asins=B09Z6FRGVY&linkId=3ed6f6c8fab5dd95e17b79d44d9e89db&show_border=true&link_opens_in_new_window=true"></iframe>
+        </div>
+
+    </div>
+</body>
+
+</html>
