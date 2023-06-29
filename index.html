@@ -1,113 +1,217 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>My Resume</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-		h1, h2 {
-			margin: 0;
-			font-weight: normal;
-		}
-		h1 {
-			font-size: 36px;
-		}
-		h2 {
-			font-size: 24px;
-			margin-top: 20px;
-		}
-		.container {
-			max-width: 800px;
-			margin: auto;
-			padding: 20px;
-		}
-		.row {
-			display: flex;
-			flex-wrap: wrap;
-			margin: -10px;
-		}
-		.col {
-			flex: 1;
-			padding: 10px;
-		}
-		.skills {
-			display: flex;
-			flex-wrap: wrap;
-			margin: -5px;
-			list-style: none;
-			padding: 0;
-		}
-		.skills li {
-			flex: 1;
-			margin: 5px;
-			background-color: #f2f2f2;
-			padding: 10px;
-			text-align: center;
-		}
-		@media (max-width: 767px) {
-			h1 {
-				font-size: 24px;
-			}
-			h2 {
-				font-size: 20px;
-			}
-			.col {
-				flex: 100%;
-			}
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Kottapeta Sai</h1>
-		<h2>Student/Learner</h2>
-	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h2>About Me</h2>
-				<p>Hi, my name is Kottapeta Sai and I'm a Student/Learner. I have 5 months of experience in building websites and web applications using HTML, CSS, JavaScript.</p>
-			</div>
-			<div class="col">
-				<h2>Contact Information</h2>
-				<p>Phone: 9849591306</p>
-				<p>Email: saikr2005@gmail.com</p>
-				<p>Website: <a href="#">SiPAyi.github.io</a></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<h2>Skills</h2>
-				<ul class="skills">
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>JavaScript</li>
-					<li>PHP</li>
-					<li>SQL</li>
-					<li>Database Management</li>
-					<li>Python</li>
-				</ul>
-			</div>
-			<div class="col">
-				<h2>Experience</h2>
-				<p>Web Developer, unic loja, 2022(not a company my friend's startup idea)</p>
-				
-			</div>
-		</div>
+<html lang="en">
 
-    <h3><a href="affiliate.html">My affiliate links</a></h3>
-    <h3><a href="bestScientificCalculators.html">Best Scientific Calculators</a></h3>
-		
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <title>Kottepeta Sai</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Sai - Engineer</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="#blogs" class="nav__link">Blogs</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <h1 class="home__title"><span>Hey!</span><br>Amigo.</h1>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt'></i>Scroll down</a>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <h2 class="section-title">About 📄</h2>
+
+            <div class="about__container bd-grid">
+                <div class="ab">
+                    <img src="assets/img/avatar.png" alt="">
+                </div>
+
+                <div>
+                    <h2 class="about__subtitle">Kottepeta Sai</h2>
+                    <span class="about__profession">Engineer</span>
+                    <div class="about__social">
+                        <a href="https://github.com/sipayi" target="_blank" class="about__social-icon"><i
+                                class='bx bxl-github'></i></a>
+                        <a href="https://www.linkedin.com/in/sipayi/" target="_blank" class="about__social-icon"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="https://twitter.com/Sai20994019/" target="_blank" class="about__social-icon"><i
+                                class='bx bxl-twitter'></i></a>
+                        <a href="mailto:saikr2005@gmail.com" target="_blank" class="about__social-icon"><i
+                                class='bx bxs-envelope'></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills 🤹</h2>
+
+            <div class="skills__container bd-grid">
+                <div class="skills__box">
+                    <span class="skills__name">Web Development</span>
+                    <span class="skills__name">git</span>
+                    <span class="skills__name">Python</span>
+                    <span class="skills__name">Problem Solving</span>
+                    <span class="skills__name">PCB Designing</span>
+                    <span class="skills__name">Cooking</span>
+                </div>
+            </div>
+        </section>
+
+        <!--===== PORTFOLIO =====-->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section-title">Portfolio 💼</h2>
+            
+            <div class="portfolio__container">
+                <h4 class="bd-grid">Nothing to Show</h4>
+                <div class="portfolio__img">
+
+                    <img src="assets/img/project1.png" alt="project1_picture">
+                    <div class="portfolio__link portfolio__link-name">
+                        <a href="https://sipayi.github.io/" target="_blank" class="portfolio__link-name">View
+                            details</a>
+                    </div>
+                </div>
+                <div class="portfolio__details">
+                    <a href="#" class="about__social-icon"><i class='bx bxl-github'> Code</i></a>
+                </div>
+            </div>
+
+        </section>
+
+        <!--===== BLOGS =====-->
+        <section class="blogs section" id="blogs">
+            <h2 class="section-title">Blogs 📰</h2>
+
+            <div class="blogs__container bd-grid">
+                <div class="blogs__name">
+                    <div>
+                        <h3>
+                            <a href="https://sipayi.github.io/" target="_blank">Affiliates</a>
+                        </h3>
+                        <div class="blog__links">
+
+                            <li id="blog__link">
+                                <a href="https://sipayi.github.io/affiliate.html" target="_blank">My affiliate
+                                    products</a>
+                            </li>
+
+                            <li id="blog__link">
+                                <a href="https://sipayi.github.io/bestScientificCalculators.html" target="_blank">Best Scientific Calculators</a>
+                            </li>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact 🤝</h2>
+
+            <div class="contact__container bd-grid">
+                <div class="contact__info">
+                    <h3 class="contact__subtitle">EMAIL</h3>
+                    <span class="contact__text">saikr2005@gmail.com</span>
+                </div>
+
+                <form action="https://formspree.io/f/mzblpjre" method="post" class="contact__form">
+                    <div class="contact__inputs">
+                        <input type="text" placeholder="Name" class="contact__input" required>
+                        <input type="mail" placeholder="Email" class="contact__input" required>
+                    </div>
+
+                    <textarea name="message" placeholder="Enter your message " id="" cols="0" rows="10"
+                        class="contact__input"></textarea>
+
+                    <input type="submit" value="Send" class="contact__button">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+
+
+            <div class="footer__data">
+                <h2 class="footer__title">EXPLORE</h2>
+                <ul>
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#skills" class="footer__link">Skills</a></li>
+                    <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                    <li><a href="#blogs" class="footer__link">Blogs</a></li>
+                    <li><a href="#Contact" class="footer__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__title">Socials</h2>
+                <a href="https://github.com/sipayi" target="_blank" class="footer__social"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://twitter.com/Sai20994019" target="_blank" class="footer__social"><i
+                        class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sipayi/" target="_blank" class="footer__social"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="mailto:saikr2005@gmail.com" target="_blank" class="footer__social"><i
+                        class='bx bxl-envelope'></i></a>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+
+    <!--===== MEDIUM BLOGS =====-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/medium.js"></script>
+
+</body>
+
 </html>
