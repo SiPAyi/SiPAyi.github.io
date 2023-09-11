@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ESC Speed Control</title>
+  <style>
+  h1{
+  	text-align: center;
+  }
+
+  .block{
+  	margin: 10px auto; 
+  	max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  
+  	#speedSlider{
+  		width: 100%;
+  	}
+
+    #speed_display{
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ESC Speed Control</h1>
+
+<div class="block">
+  <p>Status: <span id="status">Waiting for response...</span></p>
+  <!--<p>Set the speed using the slider:</p>
+  <button onclick="setSpeed()">Set Speed</button> -->
+  <input type="range" id="speedSlider" min="0" max="100" step="1" value="50" onchange="setSpeed();">
+  <p id="speed_display">Current Speed: <span id="currentSpeed">50</span>%</p>
+</div>
+
+
+  <script>
+    function setSpeed() {
+      var slider = document.getElementById("speedSlider");
+      var speed = slider.value;
+      var statusElement = document.getElementById("status");
+
+      // Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      // Define the function to handle the response from the server
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          statusElement.textContent = "Speed set to " + speed + "%";
+        }
+        else{
+		  statusElement.textContent = "kuch galath hogaya";
+        }
+      };
+
+      // Prepare the request
+      xhr.open("GET", "http://192.168.149.217/set_speed?speed=" + speed, true);
+
+      // Send the request
+      xhr.send();
+    }
+
+    // Update the displayed speed when the slider is moved
+    var slider = document.getElementById("speedSlider");
+    var currentSpeedElement = document.getElementById("currentSpeed");
+    slider.addEventListener("input", function() {
+      currentSpeedElement.textContent = slider.value;
+    });
+  </script>
+</body>
+</html>
+
