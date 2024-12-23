@@ -304,7 +304,8 @@ img{
 }
 .portfolio__img img{
     border-radius: .5rem;
-    max-width: 1000px;
+    width: min(90%, 900px);
+    margin: 0px auto;
 }
 .portfolio__link{
     position: absolute;
