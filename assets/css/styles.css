@@ -281,6 +281,7 @@ img{
     background-color: var(--white-color);
     border-radius: .25rem;
     color: #000000;
+    align-self: center;
 }
 .skills__img img{
     border-radius: .5rem;
@@ -303,6 +304,7 @@ img{
 }
 .portfolio__img img{
     border-radius: .5rem;
+    max-width: 1000px;
 }
 .portfolio__link{
     position: absolute;
@@ -488,7 +490,7 @@ img{
     }
 
     .skills__container{
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
         align-items: center;
     }
 

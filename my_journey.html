@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <title>Kottepeta Sai</title>
+
+<style>
+    /*===== VARIABLES CSS =====*/
+:root {
+    --primary-color: #1e90ff; /* Highlight color */
+    --background-color: #121212; /* Dark background */
+    --section-background: #1a1a1a; /* Slightly lighter for sections */
+    --text-color: #ffffff; /* Main text color */
+    --muted-text-color: #bbbbbb; /* Subtle text color */
+    --accent-color: #00bcd4; /* Accent for quotes or emphasis */
+    --border-color: #2a2a2a; /* Subtle border */
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/*===== GENERAL STYLES =====*/
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.l-main {
+    padding: 2rem;
+}
+
+/*===== JOURNEY SECTION =====*/
+.journey {
+    background-color: var(--section-background);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+.journey h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.journey h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+}
+
+.journey p {
+    font-size: 1rem;
+    color: var(--muted-text-color);
+    line-height: 1.6;
+}
+
+.journey p:last-of-type {
+    margin-bottom: 0;
+}
+
+/*===== QUOTE SECTION =====*/
+.quotation{
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0.5rem;
+    font-style: italic;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hello {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+
+/* Media Container */
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Media Item */
+.media-item {
+    background-color: var(--section-background);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1 1 calc(50% - 1.5rem); /* Adjust for 2 items per row */
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+}
+
+.media-item video, 
+.media-item img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 0.5rem;
+    object-fit: contain; /* Ensure aspect ratio remains intact */
+    margin-bottom: 0.5rem; /* Add some space between video/image and text */
+}
+
+.media-item p {
+    font-size: 0.9rem;
+    color: var(--muted-text-color);
+    margin: 0;
+}
+
+
+/*===== MEDIA QUERIES =====*/
+@media (max-width: 768px) {
+    .l-main {
+        padding: 1rem;
+    }
+
+    .journey h1 {
+        font-size: 2rem;
+    }
+
+    .journey h2 {
+        font-size: 1.5rem;
+    }
+
+    .quotation{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .hello {
+        font-size: 1.1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Sai - Robotics Research Engineer</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    
+                    <li class="nav__item"><a href="/index.html#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="/index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="/index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="/index.html#portfolio" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="/index.html#blogs" class="nav__link">Blogs</a></li>
+                    <li class="nav__item"><a href="/my_journey.html" class="nav__link">My Journey</a></li>
+                    <li class="nav__item"><a href="/index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <section class="my_journey section" id="my_journey">
+        <main class="l-main">
+                <!-- My Journey Section -->
+                <section class="journey">
+                    <h1>My Journey</h1>
+    <!-- First year -->
+    <h2>First Year (2023)</h2>
+    <p> first half this year is my engineering first year second semester, second half is second year first semester
+        My journey into electronics and robotics began in my first year of engineering when I visited Hyderabad to purchase my first Arduino Uno and some basic electronic components. With these tools, I started experimenting, learning the basics of circuits, and exploring programming.
+    </p>
+
+    <!-- Media Section -->
+    <div class="media-container">
+        
+        <!-- Video 1 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QCM5prRf95I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Experimenting with Arduino Uno for the first time(10/01/2023)</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fw8Gq3lHtVk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Playing Star Wars music with Arduino and an old speaker(10/01/2023)</p>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A92S0j_0Bwo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Learning to control a servo motor with Arduino(14/01/2023)</p>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/3A0PXI08nxk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Tesla Coil or Slayer exiter circuit experiment(24/02/2023)</p>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/GXY5iEmkxH8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Amplifier using op-amp (didn't record the working one) (29/07/2023)</p>
+        </div>
+        
+        <!-- Video 6 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/vzVexIfbd8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Drawing a random pattern with laser(24/04/2023)</p>
+        </div>
+        
+        <!-- Video 7 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/9l-Fxib03GE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>IR sensor(sensor)+servo(actuator) = smart_dustbin(product) 24/04/2023</p>
+        </div>
+
+        <!-- Video 8 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/lEqzkgmHTOo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>wifi controller car(09/09/2023)</p>
+        </div>
+        
+        
+        <!-- Video 9 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/tSvN1KEr_eU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>mini drone testing (14/08/2023)</p>
+        </div>
+        
+        <!-- Video 9 -->
+        <div class="media-item">
+            <iframe width="560" height="315" src="https://youtube.com/embed/b23N_rxa1FM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>esc calibration(02/11/2023)</p>
+        </div>
+        
+        <!-- Photo 1 -->
+        <div class="media-item">
+            <img src="assets/experiments/transistor_flipflop.jpg" alt="Transistor Flip-Flop Circuit using BC547" />
+            <p>Transistor flip-flop using BC547(02/06/2023)</p>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="media-item">
+            <img src="assets/experiments/amplifier_tear_down.jpg" alt="Opened amplifier for exploration" />
+            <p>Opened an amplifier to see and explore the circuit(09/08/2023)</p>
+        </div>
+        
+        <!-- Photo 3 -->
+        <div class="media-item">
+            <img src="assets/experiments/amplifier_circuit.jpg" alt="Amplifier circuit schematic" />
+            <p>Made the schematics of the amplifier using the traces on the board and a multimeter(26/08/2023)</p>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="media-item">
+            <img src="assets/experiments/IMG_20231225_231611~2.jpg" alt="Amplifier circuit schematic" />
+            <p>transmitter(25/12/2023)</p>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="media-item">
+            <img src="assets/experiments/IMG_20231225_231603~2.jpg" alt="Amplifier circuit schematic" />
+            <p>transmitter backside(25/12/2023)</p>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="media-item">
+            <img src="assets/experiments/IMG_20231225_234228~2.jpg" alt="Amplifier circuit schematic" />
+            <p>transmitter and reciever(25/12/2023)</p>
+        </div>
+
+    </div>
+
+    <p>
+        One of my earliest experiments was blinking an LED, which gave me immense satisfaction and motivated me to dive deeper. I also built a simple music player using Arduino and learned to control servos, basic electronic circuits, which helped me with building and debugging circuits, designing PCBs, programming, and sparked my interest in robotics.
+    </p>
+
+
+        <!-- Second Year -->
+                    <h2>Second Year (2024)</h2>
+                    <p>
+                        first half this year is my engineering first year second semester, second half is second year first semester. As I progressed, I ventured into more complex projects like creating a self-balancing robot and working on a drone. These projects taught me essential concepts like PID tuning, ROS2 integration, and sensor fusion. My participation in competitions like the NXP AIM and ROBOTRAC provided valuable hands-on experience.
+                    </p>
+
+    <!-- Media Section -->
+            <div class="media-container">
+                <!-- Video 1 -->
+                <div class="media-item">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/QSOJ3Gkk-Qg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>drone pid tuning and testing(15/01/2024)</p>
+                </div>
+                <!-- Video 2 -->
+                <div class="media-item">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7164298149233184768?compact=1" width="560" height="315" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                    <p>line-following robot for ROBOTRAC(15/02/2024)</p>
+                </div>
+                <!-- Video 2 -->
+                <div class="media-item">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7203711400274251777?compact=1" width="560" height="315" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                    <p>self-balancing robot(26/05/2024)</p>
+                </div>
+                <!-- Video 3 -->
+                <div class="media-item">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/niTO7IpsIjg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>self-driving car simulation in gazebo(31/07/2024)</p>
+                </div>
+                <!-- Video 4 -->
+                <div class="media-item">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/Y3jA06_URSQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>nxp aim regional final(5/08/2024)</p>
+                </div>
+                <!-- Video 5 -->
+                <div class="media-item">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7268949227194507265?compact=1" width="560" height="315" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                    <p>image classifier- mini project(29/11/2024)</p>
+                </div>
+                <!-- Video 6 -->
+                <div class="media-item">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7276844483990724608?compact=1" width="560" height="315" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                    <p>b3rb buggy testing in our lab(29/11/2024)</p>
+                </div>
+                <!-- Video 7 -->
+                <div class="media-item">
+                    <video width="560" height="315" controls>
+                        <source src="assets/experiments/2024/video_20240309_200940.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Weighing machine for rocket motor thrust measurement (09/03/2024)</p>
+                </div>
+
+
+                <!-- Photo 1 -->
+                <div class="media-item">
+                    <img src="assets/experiments/IMG_20240308_090005.jpg" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>3d printed gripper(08/03/2024)</p>
+                </div>
+                <!-- Photo 2 -->
+                <div class="media-item">
+                    <img src="assets/experiments/self_driving_car.png" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>b3rb buggy by nxp, assembled(12/08/2024)</p>
+                </div>
+                <!-- Photo 3 -->
+                <div class="media-item">
+                    <img src="assets/experiments/IMG_20240904_180444.jpg" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>barath aeroplane project, im the electronics guy in that(04/09/2024)</p>
+                </div>
+                <!-- Photo 4 -->
+                <div class="media-item">
+                    <img src="assets/experiments/IMG_20240914_174613.png" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>buggyrace competition like nxp competition but we organized in our compus(14/09/2024)</p>
+                </div>
+                <!-- Photo 5 -->
+                <div class="media-item">
+                    <img src="assets/experiments/IMG-20240813-WA0009.jpeg" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>navqplus(computer) and canhubk3(controller) from b3rb buggy(13/08/2024)</p>
+                </div>
+                <!-- Photo 6 -->
+                <div class="media-item">
+                    <img src="assets/experiments/IMG-20240310-WA0016.jpg" alt="Transistor Flip-Flop Circuit using BC547" />
+                    <p>robotic arm(10/03/2024)</p>
+                </div>
+            </div>
+
+            
+                    <p>
+                        During these years, I also explored IoT projects, designing PCBs and flight controllers, and collaborated with a team to develop a self-driving car simulation using tools like Gazebo and NavQPlus.
+                    </p>
+            
+
+        <!-- Third Year -->
+                    <h2>Current Focus</h2>
+                    <p>
+                        Currently, I am delving into AI and ML, reinforcement learnging, control systems, applying these technologies to image processing tasks, navigation, multi robot coordinations in robotics. My latest project involves navigating a drone in mars terrain without GPS/GNSS. This project is for IRoC(Isro Robotics Challenge 2025)
+                    </p>
+                    <div class="quotation">
+                        <p class="hello">"Every small step forward adds to the foundation of big achievements."</p>
+                    </div>
+                </section>
+
+
+        </main>
+    </section>
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+
+
+            <div class="footer__data">
+                <h2 class="footer__title">EXPLORE</h2>
+                <ul>
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#skills" class="footer__link">Skills</a></li>
+                    <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                    <li><a href="#blogs" class="footer__link">Blogs</a></li>
+                    <li><a href="#Contact" class="footer__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__title">Socials</h2>
+                <a href="https://github.com/sipayi" target="_blank" class="footer__social"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://twitter.com/Sai20994019" target="_blank" class="footer__social"><i
+                        class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sipayi/" target="_blank" class="footer__social"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="mailto:saikr2005@gmail.com" target="_blank" class="footer__social"><i
+                        class='bx bxl-envelope'></i></a>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+
+    <!--===== MEDIUM BLOGS =====-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/medium.js"></script>
+
+</body>
+
+</html>

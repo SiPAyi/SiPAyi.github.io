@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <title>Kottepeta Sai</title>
+    <style>
+        main {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #bccee0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        td {
+            background-color: #fff;
+        }
+        select {
+            padding: 6px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 70%;
+            background-color: #fafafa;
+        }
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .semester-summary {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .total-gpa {
+            font-size: 22px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .semester-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Sai - Robotics Engineer</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    
+                    <li class="nav__item"><a href="/index.html#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="/index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="/index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="/index.html#portfolio" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="/index.html#blogs" class="nav__link">Blogs</a></li>
+                    <li class="nav__item"><a href="/my_journey.html" class="nav__link">My Journey</a></li>
+                    <li class="nav__item"><a href="/index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+
+            <div class="container">
+                <h1>Academic Performance</h1>
+                <div id="semesters"></div>
+                <div class="semester-summary">
+                    <h2>Total GPA: <span id="totalGpa" class="total-gpa"></span></h2>
+                </div>
+            </div>
+        
+            <script>
+                // Grade to grade point mapping
+                const gradePoints = {
+                    Ex: 10,
+                    A: 9,
+                    B: 8,
+                    C: 7,
+                    D: 6,
+                    F: 0,
+                };
+        
+                // Data structure to store academic details
+                const academicData = [
+                    {
+                        semester: 1,
+                        subjects: [
+                            { name: "Differential Equations and Multivariable Calculus", code: "20MA1101", credits: 4, grade: "B" },
+                            { name: "Electrical Technology", code: "20EE1110", credits: 4, grade: "B" },
+                            { name: "Electrical Technology Lab", code: "20EE1180", credits: 1.5, grade: "A" },
+                            { name: "Engineering Physics", code: "20PY1101", credits: 4, grade: "B" },
+                            { name: "Engineering Physics Lab", code: "20PY1181", credits: 1.5, grade: "Ex" },
+                            { name: "Introduction to Latest Technical Advancements", code: "20EC1102", credits: 1, grade: "B" },
+                            { name: "Programming & Data Structures", code: "20CS1108", credits: 3, grade: "A" },
+                            { name: "Programming & Data Structures Lab", code: "20CS1188", credits: 1.5, grade: "B" },
+                            { name: "Signals and Systems", code: "20EC1203", credits: 4, grade: "B" },
+                        ],
+                    },
+                    {
+                        semester: 2,
+                        subjects: [
+                            { name: "Mathematical Methods", code: "20MA1201", credits: 4, grade: "B" },
+                            { name: "Network Theory", code: "20EE1211", credits: 4, grade: "D" },
+                            { name: "Electronic Devices and Circuits", code: "20EC1201", credits: 4, grade: "D" },
+                            { name: "English - Language Communication Skills Lab-1", code: "20EG1281", credits: 2.5, grade: "A" },
+                            { name: "Engineering Graphics and Design", code: "20CE1114", credits: 2.5, grade: "A" },
+                            { name: "Object Oriented Programming", code: "20CS1209", credits: 2, grade: "B" },
+                            { name: "Object Oriented Programming Laboratory", code: "20CS1289", credits: 1.5, grade: "Ex" },
+                            { name: "Computational Lab", code: "20EC1285", credits: 1.5, grade: "Ex" },
+                            { name: "Electronic Devices and Circuits Lab", code: "20EC1281", credits: 1.5, grade: "A" },
+                        ],
+                    },
+                    {
+                        semester: 3,
+                        subjects: [
+                            { name: "Analog Electronic Circuits", code: "20EC2101", credits: 4, grade: "D" },
+                            { name: "Analog Electronic Circuits Lab", code: "20EC2181", credits: 1.5, grade: "B" },
+                            { name: "Control Systems", code: "20EE2110", credits: 3, grade: "D" },
+                            { name: "Digital Logic Design", code: "20EC2102", credits: 4, grade: "D" },
+                            { name: "Digital Logic Design Lab", code: "20EC2182", credits: 1.5, grade: "B" },
+                            { name: "Digital Signal Processing", code: "20EC2103", credits: 4, grade: "D" },
+                            { name: "Digital Signal Processing Lab", code: "20EC2183", credits: 1.5, grade: "B" },
+                            { name: "Internet of Things Lab", code: "20EC2185", credits: 1.5, grade: "A" },
+                            { name: "Probability & Random Variables", code: "20MA2101", credits: 3, grade: "C" },
+                        ],
+                    },
+                    {
+                        semester: 4,
+                        subjects: [
+                            { name: "Communication Systems-1", code: "20EC2201", credits: 4, grade: "C" },
+                            { name: "Electromagnetic Waves & Guided Media", code: "20EC2204", credits: 4, grade: "C" },
+                            { name: "Linear Integrated Circuits", code: "20EC2203", credits: 4, grade: "D" },
+                            { name: "Digital System Design", code: "20EC2202", credits: 4, grade: "B" },
+                            { name: "Robotics Laboratory", code: "20EC2285", credits: 3, grade: "A" },
+                            { name: "Communication Systems-1 Lab", code: "20EC2281", credits: 2, grade: "Ex" },
+                            { name: "Linear Integrated Circuits Lab", code: "20EC2283", credits: 2, grade: "B" },
+                            { name: "Digital System Design Lab", code: "20EC2282", credits: 2, grade: "Ex" },
+                        ],
+                    },
+                ];
+        
+                // Function to calculate GPA
+                function calculateGpa(subjects) {
+                    let totalCredits = 0;
+                    let totalGradePoints = 0;
+        
+                    subjects.forEach((subject) => {
+                        const gradePoint = gradePoints[subject.grade] || 0;
+                        totalCredits += subject.credits;
+                        totalGradePoints += gradePoint * subject.credits;
+                    });
+        
+                    return totalGradePoints / totalCredits;
+                }
+        
+                // Function to update grade
+                function updateGrade(semesterIndex, subjectIndex, newGrade) {
+                    academicData[semesterIndex].subjects[subjectIndex].grade = newGrade;
+                    generateTables();  // Re-render the entire table after updating the grade
+                }
+        
+                // Function to generate tables
+                function generateTables() {
+                    const semestersDiv = document.getElementById("semesters");
+                    let totalCredits = 0;
+                    let totalGradePoints = 0;
+        
+                    semestersDiv.innerHTML = ''; // Clear the existing tables before re-rendering
+        
+                    academicData.forEach((semesterData, semesterIndex) => {
+                        const { semester, subjects } = semesterData;
+        
+                        // Create table for each semester
+                        let tableHTML = `<div class="semester-header"><h2>Semester ${semester}</h2></div><table>`;
+                        tableHTML += `
+                            <tr>
+                                <th>Subject</th>
+                                <th>Sub Code</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        `;
+        
+                        subjects.forEach((subject, subjectIndex) => {
+                            tableHTML += `
+                                <tr>
+                                    <td>${subject.name}</td>
+                                    <td>${subject.code}</td>
+                                    <td>${subject.credits}</td>
+                                    <td>
+                                        <select onchange="updateGrade(${semesterIndex}, ${subjectIndex}, this.value)">
+                                            <option value="Ex" ${subject.grade === 'Ex' ? 'selected' : ''}>Ex</option>
+                                            <option value="A" ${subject.grade === 'A' ? 'selected' : ''}>A</option>
+                                            <option value="B" ${subject.grade === 'B' ? 'selected' : ''}>B</option>
+                                            <option value="C" ${subject.grade === 'C' ? 'selected' : ''}>C</option>
+                                            <option value="D" ${subject.grade === 'D' ? 'selected' : ''}>D</option>
+                                            <option value="F" ${subject.grade === 'F' ? 'selected' : ''}>F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            `;
+                        });
+        
+                        tableHTML += `</table>`;
+        
+                        // Calculate and display semester GPA
+                        const semesterGpa = calculateGpa(subjects);
+                        tableHTML += `<p><strong>Semester GPA:</strong> ${semesterGpa.toFixed(2)}</p>`;
+        
+                        // Update total GPA calculation
+                        totalCredits += subjects.reduce((sum, subject) => sum + subject.credits, 0);
+                        totalGradePoints += semesterGpa * subjects.reduce((sum, subject) => sum + subject.credits, 0);
+        
+                        semestersDiv.innerHTML += tableHTML;
+                    });
+        
+                    // Calculate and display total GPA
+                    const totalGpa = (totalGradePoints / totalCredits).toFixed(2);
+                    document.getElementById("totalGpa").textContent = totalGpa;
+                }
+        
+                // Generate tables on page load
+                generateTables();
+            </script>
+            
+        <!-- Photo 2 -->
+        <div class="media-item" style="display: flex; align-items: center; flex-direction: column; margin: 0px auto;">
+            <h1>Pre-University Course marks memo</h1>
+            <img src="assets/puc_marks_memo.jpeg" alt="puc_marks_memo" />
+<br>
+            <h1>10th marks memo</h1>
+            <img src="assets/tenth_marks_memo.jpeg" alt="puc_marks_memo" />
+        </div>
+
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+
+
+            <div class="footer__data">
+                <h2 class="footer__title">EXPLORE</h2>
+                <ul>
+                    <li><a href="#home" class="footer__link">Home</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#skills" class="footer__link">Skills</a></li>
+                    <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                    <li><a href="#blogs" class="footer__link">Blogs</a></li>
+                    <li><a href="#Contact" class="footer__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__title">Socials</h2>
+                <a href="https://github.com/sipayi" target="_blank" class="footer__social"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://twitter.com/Sai20994019" target="_blank" class="footer__social"><i
+                        class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/sipayi/" target="_blank" class="footer__social"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="mailto:saikr2005@gmail.com" target="_blank" class="footer__social"><i
+                        class='bx bxl-envelope'></i></a>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+
+    <!--===== MEDIUM BLOGS =====-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/medium.js"></script>
+
+</body>
+
+</html>
